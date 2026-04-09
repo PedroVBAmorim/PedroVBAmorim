@@ -117,12 +117,9 @@ Serverless NLP pipeline on AWS with 5+ multi-intent conversational flows, custom
 <br>
 📊 **LinkedIn Learning** — SQL for Finance Professionals (2026)
 
-</div>
----
 
-<div align="center">
 
-<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=0:0d1117,50:1a2332,100:0d1117&height=80&section=footer"/>
+
 
 
 
