@@ -111,11 +111,11 @@ Serverless NLP pipeline on AWS with 5+ multi-intent conversational flows, custom
 
 <div align="center">
 
-🏅 **Databricks** — Getting Started with SQL Analytics & BI (2026)
+ **Databricks** — Getting Started with SQL Analytics & BI (2026)
 <br>
-☁️ **AWS** — Introduction to Amazon API Gateway (2026)
+ **AWS** — Introduction to Amazon API Gateway (2026)
 <br>
-📊 **LinkedIn Learning** — SQL for Finance Professionals (2026)
+ **Google** — Generative AI (2025)
 
 
 
