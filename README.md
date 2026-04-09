@@ -11,7 +11,7 @@
 [![Portfolio](https://img.shields.io/badge/Portfolio-FF6B35?style=for-the-badge&logo=firefox&logoColor=white)](https://pedrovbamorim.github.io)
 [![Email](https://img.shields.io/badge/Email-EA4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:Pedrovillasboasa@ufl.edu)
 
-</div>
+
 
 
 
