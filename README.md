@@ -13,9 +13,7 @@
 
 </div>
 
----
 
-Hey, I'm Pedro — a Computer Science student at UF building projects at the intersection of software and finance. I like turning raw data into useful tools and shipping things that actually work.
 
 ---
 
