@@ -1,7 +1,7 @@
 <div align="center">
 
 <!-- Header Banner -->
-<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=0:0d1117,50:1a2332,100:0d1117&height=120&section=header&text=Pedro%20Amorim&fontSize=42&fontColor=58a6ff&fontAlignY=70&animation=fadeIn&desc=Computer%20Science%20%40%20UF%20%7C%20Builder%20%7C%20Data%20Driven&descAlignY=88&descSize=16&descColor=8b949e"/>
+<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=0:0d1117,50:1a2332,100:0d1117&height=120&section=header&text=Pedro%20Amorim&fontSize=42&fontColor=58a6ff&fontAlignY=70&animation=fadeIn&desc=Computer%20Science%20%40%20University%20of%20Florida&descAlignY=88&descSize=16&descColor=8b949e"/>
 
 </div>
 
@@ -15,20 +15,7 @@
 
 ---
 
-## 👋 About Me
-
-```python
-pedro = {
-    "name":       "Pedro Villas Boas Amorim",
-    "school":     "University of Florida — B.S. Computer Science (May 2027)",
-    "location":   "Gainesville, FL 🐊",
-    "languages":  ["English 🇺🇸", "Portuguese 🇧🇷", "Spanish 🇪🇸"],
-    "interests":  ["Full-Stack Dev", "Data Analysis", "Fintech", "Cloud"],
-    "currently":  "QA & Testing Engineer @ KingPool (Sportstech Startup)"
-}
-```
-
-I'm a CS student at UF who loves building tools that make sense of data — from stock dashboards to credit card comparators. I work at the intersection of **software engineering** and **quantitative thinking**, with hands-on experience shipping real products and generating real returns.
+Hey, I'm Pedro — a Computer Science student at UF building projects at the intersection of software and finance. I like turning raw data into useful tools and shipping things that actually work.
 
 ---
 
@@ -72,7 +59,6 @@ I'm a CS student at UF who loves building tools that make sense of data — from
 ![AWS](https://img.shields.io/badge/AWS-232F3E?style=for-the-badge&logo=amazonaws&logoColor=white)
 ![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
 ![Figma](https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white)
-![Excel](https://img.shields.io/badge/Excel-217346?style=for-the-badge&logo=microsoftexcel&logoColor=white)
 
 </div>
 
@@ -99,8 +85,6 @@ Live stock analysis tool that processes OHLCV data for 5+ tickers, computing RSI
 
 Desktop app with a weighted scoring engine evaluating 6+ financial criteria across 30+ cards. Side-by-side comparisons, real-time filtering, and a clean Qt6 GUI.
 
-⭐ *Most starred repo*
-
 </td>
 </tr>
 <tr>
@@ -125,40 +109,11 @@ Serverless NLP pipeline on AWS with 5+ multi-intent conversational flows, custom
 
 ---
 
-## 💼 Experience Highlights
-
-| Role | Company | Impact |
-|------|---------|--------|
-| 🧪 QA & Testing Engineer | KingPool *(Sportstech Startup)* | Real-time stress testing during live sports events; direct influence on product design |
-| 📊 Independent Market Analyst | FIFA World Cup Ticketing | ~$16K net profit on ~$40K capital (~40% ROI) through data-driven pricing |
-
----
-
-## 📊 GitHub Stats
-
-<div align="center">
-
-<img height="160" src="https://github-readme-stats.vercel.app/api?username=PedroVBAmorim&show_icons=true&theme=github_dark&hide_border=true&title_color=58a6ff&icon_color=58a6ff&text_color=c9d1d9&bg_color=0d1117" />
-<img height="160" src="https://github-readme-stats.vercel.app/api/top-langs/?username=PedroVBAmorim&layout=compact&theme=github_dark&hide_border=true&title_color=58a6ff&text_color=c9d1d9&bg_color=0d1117" />
-
-</div>
-
----
-
-## 🎓 Certifications & Coursework
+## 🎓 Certifications
 
 - 🏅 **Databricks** — Getting Started with SQL Analytics & BI (2026)
 - ☁️ **AWS** — Introduction to Amazon API Gateway (2026)
 - 📊 **LinkedIn Learning** — SQL for Finance Professionals (2026)
-
-**Relevant Courses:** Data Structures & Algorithms · Discrete Math · Programming I & II · Calculus I–III · Engineering Design
-
----
-
-## 🌐 Campus Involvement
-
-- 🎨 **Gator User Design (GUD)** — UI/UX thinking applied to real software
-- 💻 **Society of Software Developers** — Bloomberg Live Coding · Perplexity AI for Developers Workshop
 
 ---
 
