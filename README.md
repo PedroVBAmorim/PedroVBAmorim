@@ -1,117 +1,819 @@
-<div align="center">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pedro Amorim</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-<!-- Header Banner -->
-<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=0:0d1117,50:1a2332,100:0d1117&height=120&section=header&text=Pedro%20Amorim&fontSize=42&fontColor=58a6ff&fontAlignY=70&animation=fadeIn&desc=Computer%20Science%20%40%20University%20of%20Florida&descAlignY=88&descSize=16&descColor=8b949e"/>
+  :root {
+    --bg: #f5f4f0;
+    --ink: #111110;
+    --ink2: #555550;
+    --ink3: #999990;
+    --accent: #1a472a;
+    --accent-light: #e8f0eb;
+    --border: rgba(17,17,16,0.10);
+    --card-bg: #ffffff;
+    --mono: 'DM Mono', monospace;
+    --sans: 'DM Sans', sans-serif;
+  }
 
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--sans);
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2.5rem;
+    height: 56px;
+    background: rgba(245,244,240,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .nav-logo {
+    font-family: var(--mono);
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    color: var(--ink);
+    text-decoration: none;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+  }
+
+  .nav-links a {
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--ink2);
+    text-decoration: none;
+    letter-spacing: 0.04em;
+    transition: color 0.15s;
+  }
+
+  .nav-links a:hover { color: var(--ink); }
+
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 0 2.5rem 5rem;
+    padding-top: 56px;
+  }
+
+  .hero-eyebrow {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    color: var(--ink3);
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+    opacity: 0;
+    animation: fadeUp 0.6s 0.1s forwards;
+  }
+
+  .hero-name {
+    font-size: clamp(52px, 9vw, 120px);
+    font-weight: 300;
+    line-height: 0.92;
+    letter-spacing: -0.03em;
+    margin-bottom: 2rem;
+    opacity: 0;
+    animation: fadeUp 0.7s 0.2s forwards;
+  }
+
+  .hero-name em {
+    font-style: italic;
+    color: var(--ink2);
+  }
+
+  .hero-bottom {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 2rem;
+    flex-wrap: wrap;
+    opacity: 0;
+    animation: fadeUp 0.7s 0.35s forwards;
+  }
+
+  .hero-desc {
+    max-width: 420px;
+    font-size: 15px;
+    color: var(--ink2);
+    line-height: 1.7;
+  }
+
+  .hero-desc strong {
+    color: var(--ink);
+    font-weight: 500;
+  }
+
+  .hero-links {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  .btn {
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: 0.04em;
+    padding: 10px 20px;
+    border-radius: 2px;
+    text-decoration: none;
+    transition: all 0.15s;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .btn-primary {
+    background: var(--ink);
+    color: var(--bg);
+    border: 1px solid var(--ink);
+  }
+
+  .btn-primary:hover {
+    background: var(--accent);
+    border-color: var(--accent);
+  }
+
+  .btn-outline {
+    background: transparent;
+    color: var(--ink);
+    border: 1px solid var(--border);
+  }
+
+  .btn-outline:hover {
+    border-color: var(--ink);
+    background: var(--card-bg);
+  }
+
+  .section-divider {
+    height: 1px;
+    background: var(--border);
+    margin: 0 2.5rem;
+  }
+
+  section {
+    padding: 6rem 2.5rem;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .section-label {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    color: var(--ink3);
+    text-transform: uppercase;
+    margin-bottom: 3rem;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .section-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+  }
+
+  .exp-item {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 2rem;
+    padding: 2.5rem 0;
+    border-bottom: 1px solid var(--border);
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s, transform 0.5s;
+  }
+
+  .exp-item.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .exp-item:first-of-type { border-top: 1px solid var(--border); }
+
+  .exp-meta { padding-top: 4px; }
+
+  .exp-date {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--ink3);
+    letter-spacing: 0.06em;
+    margin-bottom: 6px;
+  }
+
+  .exp-company {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--ink2);
+  }
+
+  .exp-badge {
+    display: inline-block;
+    font-family: var(--mono);
+    font-size: 9px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 2px 6px;
+    border-radius: 2px;
+    background: var(--accent-light);
+    color: var(--accent);
+    border: 1px solid rgba(26,71,42,0.15);
+    margin-top: 6px;
+  }
+
+  .exp-title {
+    font-size: 20px;
+    font-weight: 400;
+    letter-spacing: -0.02em;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+  }
+
+  .exp-subtitle {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--ink3);
+    margin-bottom: 1rem;
+    letter-spacing: 0.04em;
+  }
+
+  .exp-bullets {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .exp-bullets li {
+    font-size: 14px;
+    color: var(--ink2);
+    padding-left: 1rem;
+    position: relative;
+    line-height: 1.6;
+  }
+
+  .exp-bullets li::before {
+    content: '—';
+    position: absolute;
+    left: 0;
+    color: var(--ink3);
+    font-family: var(--mono);
+    font-size: 12px;
+  }
+
+  .highlight {
+    color: var(--ink);
+    font-weight: 500;
+  }
+
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+  }
+
+  .project-card {
+    background: var(--card-bg);
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s, transform 0.5s, background 0.15s;
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .project-card-static {
+    background: var(--card-bg);
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s, transform 0.5s, background 0.15s;
+    color: inherit;
+    cursor: default;
+  }
+
+  .project-card.visible,
+  .project-card-static.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .project-card:hover {
+    background: var(--accent-light);
+  }
+
+  .project-card:hover .project-arrow {
+    transform: translate(3px, -3px);
+  }
+
+  .project-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+
+  .project-name {
+    font-size: 17px;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    line-height: 1.2;
+  }
+
+  .project-arrow {
+    font-size: 18px;
+    color: var(--ink3);
+    transition: transform 0.2s;
+    flex-shrink: 0;
+  }
+
+  .project-badge {
+    font-family: var(--mono);
+    font-size: 9px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 2px 7px;
+    border-radius: 2px;
+    background: #fff8e6;
+    color: #a07000;
+    border: 1px solid rgba(160,112,0,0.2);
+    flex-shrink: 0;
+  }
+
+  .project-desc {
+    font-size: 13px;
+    color: var(--ink2);
+    line-height: 1.6;
+    flex: 1;
+  }
+
+  .project-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .tag {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.06em;
+    padding: 3px 8px;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 2px;
+    color: var(--ink2);
+  }
+
+  .project-stat {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--accent);
+    letter-spacing: 0.04em;
+  }
+
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 2rem;
+  }
+
+  .skill-group-label {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    color: var(--ink3);
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+
+  .skill-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .skill-list li {
+    font-size: 14px;
+    color: var(--ink2);
+  }
+
+  .contact-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 2rem;
+  }
+
+  .contact-heading {
+    font-size: clamp(32px, 5vw, 56px);
+    font-weight: 300;
+    letter-spacing: -0.03em;
+    line-height: 1.05;
+  }
+
+  .contact-heading em {
+    font-style: italic;
+    color: var(--ink2);
+  }
+
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 2rem 2.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .footer-copy {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--ink3);
+    letter-spacing: 0.04em;
+  }
+
+  .footer-links {
+    display: flex;
+    gap: 1.5rem;
+  }
+
+  .footer-links a {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--ink3);
+    text-decoration: none;
+    letter-spacing: 0.04em;
+    transition: color 0.15s;
+  }
+
+  .footer-links a:hover { color: var(--ink); }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  @media (max-width: 900px) {
+    .skills-grid { grid-template-columns: repeat(3, 1fr); }
+  }
+
+  @media (max-width: 700px) {
+    nav { padding: 0 1.5rem; }
+    .hero { padding: 56px 1.5rem 4rem; }
+    .section-divider { margin: 0 1.5rem; }
+    section { padding: 4rem 1.5rem; }
+    .exp-item { grid-template-columns: 1fr; gap: 0.75rem; }
+    footer { padding: 1.5rem; }
+    .contact-row { flex-direction: column; align-items: flex-start; }
+    .skills-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#" class="nav-logo">pedro amorim</a>
+  <ul class="nav-links">
+    <li><a href="#experience">experience</a></li>
+    <li><a href="#projects">projects</a></li>
+    <li><a href="#contact">contact</a></li>
+  </ul>
+</nav>
+
+<div class="hero">
+  <p class="hero-eyebrow">CS @ University of Florida · Class of 2028</p>
+  <h1 class="hero-name">Pedro<br><em>Amorim</em></h1>
+  <div class="hero-bottom">
+    <p class="hero-desc">
+      Building <strong>finance tools</strong> and <strong>full-stack apps</strong> at the intersection of software engineering and markets. Based in Gainesville, FL.
+    </p>
+    <div class="hero-links">
+      <a href="https://github.com/PedroVBAmorim" target="_blank" class="btn btn-primary">GitHub ↗</a>
+      <a href="https://www.linkedin.com/in/pedroamorimufl" target="_blank" class="btn btn-outline">LinkedIn ↗</a>
+      <a href="mailto:pedrovillasboasa@ufl.edu" class="btn btn-outline">Email</a>
+    </div>
+  </div>
 </div>
 
-<div align="center">
+<div class="section-divider"></div>
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/pedroamorimufl)
-[![Portfolio](https://img.shields.io/badge/Portfolio-FF6B35?style=for-the-badge&logo=firefox&logoColor=white)](https://pedrovbamorim.github.io)
-[![Email](https://img.shields.io/badge/Email-EA4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:Pedrovillasboasa@ufl.edu)
+<section id="experience">
+  <p class="section-label">Experience</p>
 
-</div>
+  <div class="exp-item">
+    <div class="exp-meta">
+      <p class="exp-date">May 2026 — Present</p>
+      <p class="exp-company">WRTH</p>
+      <span class="exp-badge">Current</span>
+    </div>
+    <div>
+      <h3 class="exp-title">Backend Engineer Intern</h3>
+      <p class="exp-subtitle">AWS-Invested · NVIDIA Inception · Pre-Seed AI-Native Commerce Infrastructure</p>
+      <ul class="exp-bullets">
+        <li>Built a <span class="highlight">Node.js/TypeScript webhook pipeline</span> routing unresolved Intercom AI conversations to Zendesk agents, surfacing Salesforce contract data in the agent sidebar to reduce context-switching during live support sessions</li>
+        <li>Built a server-side <span class="highlight">Stripe payment integration</span> for a live auction platform using Supabase Edge Functions and TypeScript — handling PaymentIntent creation, webhook signature verification, and payment status sync</li>
+        <li>Serving as primary backend engineer for a <span class="highlight">React Native buy/sell companion app</span>, building a rate-limited Gemini Vision proxy for item identification and designing the Supabase schema and RLS policies powering a multi-merchant item lifecycle</li>
+        <li>Diagnosed a P1 production bug blocking vendor onboarding by auditing Supabase RLS policies and identifying a missing INSERT grant</li>
+        <li>Audited an eBay OAuth integration, surfacing token-revocation and configuration gaps ahead of launch</li>
+      </ul>
+    </div>
+  </div>
 
----
+  <div class="exp-item">
+    <div class="exp-meta">
+      <p class="exp-date">Sep 2025 — Present</p>
+      <p class="exp-company">CardMatch</p>
+      <span class="exp-badge">Current</span>
+    </div>
+    <div>
+      <h3 class="exp-title">Founder & Full-Stack Engineer <a href="https://github.com/PedroVBAmorim/CardMatch" target="_blank" style="font-family: var(--mono); font-size: 12px; font-weight: 400; color: var(--ink3); text-decoration: none; letter-spacing: 0.04em; margin-left: 8px;">↗ view repo</a></h3>
+      <p class="exp-subtitle">Zero-Friction Fintech Card-Recommendation Platform</p>
+      <ul class="exp-bullets">
+        <li>Designed an object-oriented C++/Qt prototype that evolved into a full-stack fintech platform, reaching <span class="highlight">2,500+ users and 5,000+ pageviews</span> within 5 days of launch via organic Reddit distribution (100K+ impressions)</li>
+        <li>Built a <span class="highlight">Python/FastAPI backend</span> handling guest sessions and rate limiting, with caching and dual deployment across Railway and Render for uptime and reliability</li>
+        <li>Designed a 48-card <span class="highlight">Supabase/PostgreSQL schema</span> for issuers, APR, and reward tiers, backed by 240+ tests in a CI/CD pipeline (GitHub Actions)</li>
+        <li>Debugged a Python scoring algorithm — surfaced via user feedback — that over-weighted one spend category, rebalancing weights to deliver more accurate multi-card recommendations</li>
+      </ul>
+    </div>
+  </div>
 
-## 🛠️ Tech Stack
+  <div class="exp-item">
+    <div class="exp-meta">
+      <p class="exp-date">Apr 2026 — Present</p>
+      <p class="exp-company">KingPool</p>
+      <span class="exp-badge">Current</span>
+    </div>
+    <div>
+      <h3 class="exp-title">QA & Testing Engineer</h3>
+      <p class="exp-subtitle">Sportstech Startup (Early-Stage)</p>
+      <ul class="exp-bullets">
+        <li>Audited onboarding, error states, and settings UI through structured 1:1 founder sessions, surfacing 6 actionable UX issues that informed product roadmap priorities</li>
+      </ul>
+    </div>
+  </div>
 
-### Languages
-<div align="center">
+</section>
 
-![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
-![C++](https://img.shields.io/badge/C++-00599C?style=for-the-badge&logo=cplusplus&logoColor=white)
-![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
-![SQL](https://img.shields.io/badge/SQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white)
+<div class="section-divider"></div>
 
-</div>
+<section id="projects">
+  <p class="section-label">Projects</p>
 
-### Frontend & Backend
-<div align="center">
+  <div class="projects-grid">
 
-![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
-![Express](https://img.shields.io/badge/Express-000000?style=for-the-badge&logo=express&logoColor=white)
-![React](https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black)
-![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white)
-![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
-![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+    <a href="https://github.com/PedroVBAmorim/kalshi-edge" target="_blank" class="project-card">
+      <div class="project-header">
+        <span class="project-name">Kalshi Edge</span>
+        <span class="project-arrow">↗</span>
+      </div>
+      <p class="project-desc">End-to-end prediction market signal engine ingesting live Kalshi exchange data. Computes Z-score deviations from category-derived probability baselines with time-to-expiry correction, flagging OVERPRICED/UNDERPRICED markets. FastAPI serving layer with in-memory caching fronted by an interactive Streamlit dashboard. Built for Zerve Hackathon.</p>
+      <p class="project-stat">|Z| > 2.0 anomaly threshold · 4 API endpoints · Live filtering</p>
+      <div class="project-stack">
+        <span class="tag">Python</span>
+        <span class="tag">FastAPI</span>
+        <span class="tag">Streamlit</span>
+        <span class="tag">REST API</span>
+        <span class="tag">Statistics</span>
+      </div>
+    </a>
 
-</div>
+    <a href="https://github.com/StellarOps-Labs/stellarops-indexer/pull/11" target="_blank" class="project-card">
+      <div class="project-header">
+        <span class="project-name">StellarOps Indexer — Open Source Contribution</span>
+        <span class="project-arrow">↗</span>
+      </div>
+      <p class="project-desc">Contributed a contributor-activity-summary REST endpoint, including tests and documentation, to this open-source GitHub indexing tool.</p>
+      <p class="project-stat">Merged PR</p>
+      <div class="project-stack">
+        <span class="tag">TypeScript</span>
+        <span class="tag">Express</span>
+        <span class="tag">Node.js</span>
+      </div>
+    </a>
 
-### Data & Cloud
-<div align="center">
+    <a href="https://github.com/PedroVBAmorim/fifa-ticket-market-analysis" target="_blank" class="project-card">
+      <div class="project-header">
+        <span class="project-name">FIFA World Cup Ticket Market Analysis</span>
+        <span class="project-arrow">↗</span>
+      </div>
+      <p class="project-desc">Managed a portfolio of 40+ positions (~$40K capital), generating ~$16K net profit (~40% ROI) through data-driven market timing. Built Excel-based financial models tracking cost basis, platform fees, and net returns; analyzed historical pricing and demand data across marketplaces to optimize entry/exit timing.</p>
+      <p class="project-stat">~40% ROI · $16K profit · 40+ positions</p>
+      <div class="project-stack">
+        <span class="tag">Excel</span>
+        <span class="tag">Data Modeling</span>
+      </div>
+    </a>
 
-![Supabase](https://img.shields.io/badge/Supabase-3ECF8E?style=for-the-badge&logo=supabase&logoColor=white)
-![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?style=for-the-badge&logo=postgresql&logoColor=white)
-![AWS](https://img.shields.io/badge/AWS-232F3E?style=for-the-badge&logo=amazonaws&logoColor=white)
-![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
-![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
+    <a href="https://github.com/PedroVBAmorim/market-dashboard" target="_blank" class="project-card">
+      <div class="project-header">
+        <span class="project-name">Market Insight Dashboard</span>
+        <span class="project-arrow">↗</span>
+      </div>
+      <p class="project-desc">Live stock analysis tool processing OHLCV data for 5+ equities. Computes cumulative return, annualized volatility, RSI, and max drawdown with automated plain-English market summaries. Deployed as a fully interactive public web app on Streamlit Cloud.</p>
+      <p class="project-stat">~3s analysis generation · Live public URL</p>
+      <div class="project-stack">
+        <span class="tag">Python</span>
+        <span class="tag">Pandas</span>
+        <span class="tag">Streamlit</span>
+        <span class="tag">Plotly</span>
+        <span class="tag">NumPy</span>
+      </div>
+    </a>
 
-</div>
+  </div>
+</section>
 
----
+<div class="section-divider"></div>
 
-## 🚀 Featured Projects
+<section>
+  <p class="section-label">Skills</p>
+  <div class="skills-grid">
+    <div>
+      <p class="skill-group-label">Languages</p>
+      <ul class="skill-list">
+        <li>Python</li>
+        <li>C++</li>
+        <li>JavaScript</li>
+        <li>TypeScript</li>
+        <li>SQL</li>
+        <li>Dart</li>
+      </ul>
+    </div>
+    <div>
+      <p class="skill-group-label">Frontend</p>
+      <ul class="skill-list">
+        <li>React</li>
+        <li>HTML / CSS</li>
+        <li>Flutter</li>
+        <li>Streamlit</li>
+      </ul>
+    </div>
+    <div>
+      <p class="skill-group-label">Backend</p>
+      <ul class="skill-list">
+        <li>Node.js / Express</li>
+        <li>FastAPI</li>
+        <li>REST APIs</li>
+        <li>PostgreSQL</li>
+      </ul>
+    </div>
+    <div>
+      <p class="skill-group-label">Data & Analysis</p>
+      <ul class="skill-list">
+        <li>Pandas / NumPy</li>
+        <li>Plotly</li>
+        <li>Excel</li>
+        <li>Supabase</li>
+      </ul>
+    </div>
+    <div>
+      <p class="skill-group-label">Cloud & Tools</p>
+      <ul class="skill-list">
+        <li>AWS Lambda / Lex</li>
+        <li>Docker</li>
+        <li>Git / GitHub</li>
+        <li>Railway / Render</li>
+      </ul>
+    </div>
+  </div>
+</section>
 
-<table>
-<tr>
-<td width="50%">
+<div class="section-divider"></div>
 
-### 💳 [CardMatch](https://cardmatch.net)
-**Python · FastAPI · Supabase/PostgreSQL · React**
+<section id="certifications">
+  <p class="section-label">Certifications</p>
 
-Fintech card-recommendation platform — 2,550+ users within 5 days of launch via organic Reddit distribution (100K+ views). Full CI/CD pipeline with 240+ tests.
+  <div class="exp-item">
+    <div class="exp-meta">
+      <p class="exp-date">Apr 2026</p>
+      <p class="exp-company">Google</p>
+    </div>
+    <div>
+      <h3 class="exp-title">Google Data Analytics Professional Certificate</h3>
+      <ul class="exp-bullets">
+        <li>Completed professional certificate covering data cleaning, analysis, visualization, and storytelling using SQL, R, and Tableau</li>
+      </ul>
+    </div>
+  </div>
 
-🔗 [**Live App**](https://cardmatch.net)
+  <div class="exp-item">
+    <div class="exp-meta">
+      <p class="exp-date">Apr 2026</p>
+      <p class="exp-company">AWS</p>
+    </div>
+    <div>
+      <h3 class="exp-title">Introduction to Amazon API Gateway</h3>
+      <ul class="exp-bullets">
+        <li>Covered REST API design, HTTP methods, JSON data handling, and API endpoints & routing on AWS</li>
+      </ul>
+    </div>
+  </div>
 
-</td>
-<td width="50%">
+  <div class="exp-item">
+    <div class="exp-meta">
+      <p class="exp-date">Apr 2026</p>
+      <p class="exp-company">Simplilearn</p>
+    </div>
+    <div>
+      <h3 class="exp-title">Getting Started with AWS Services Fundamentals for Beginners</h3>
+      <ul class="exp-bullets">
+        <li>Completed foundational AWS training covering <span class="highlight">Amazon S3</span>, AWS Lambda, and core cloud infrastructure</li>
+      </ul>
+    </div>
+  </div>
 
-### 🔌 [StellarOps Indexer — Open Source Contribution](https://github.com/StellarOps-Labs/stellarops-indexer/pull/11)
-**TypeScript · Express · Node.js**
+  <div class="exp-item">
+    <div class="exp-meta">
+      <p class="exp-date">Apr 2026</p>
+      <p class="exp-company">Databricks</p>
+    </div>
+    <div>
+      <h3 class="exp-title">Get Started with SQL Analytics and BI on Databricks</h3>
+      <ul class="exp-bullets">
+        <li>Earned certification in SQL, data analysis, business intelligence, and data analytics on the Databricks platform</li>
+        <li style="font-family: var(--mono); font-size: 11px; color: var(--ink3); margin-top: 6px;">Credential ID: 10059305</li>
+      </ul>
+    </div>
+  </div>
 
-Contributed a contributor-activity-summary REST endpoint, including tests and documentation, to this open-source GitHub indexing tool.
+</section>
 
-🔗 [**Merged PR**](https://github.com/StellarOps-Labs/stellarops-indexer/pull/11)
+<div class="section-divider"></div>
 
-</td>
-</tr>
-<tr>
-<td width="50%">
+<section id="contact">
+  <div class="contact-row">
+    <h2 class="contact-heading">Let's<br><em>connect.</em></h2>
+    <div class="hero-links">
+      <a href="mailto:pedrovillasboasa@ufl.edu" class="btn btn-primary">Send an email</a>
+      <a href="https://www.linkedin.com/in/pedroamorimufl" target="_blank" class="btn btn-outline">LinkedIn ↗</a>
+      <a href="https://github.com/PedroVBAmorim" target="_blank" class="btn btn-outline">GitHub ↗</a>
+    </div>
+  </div>
+</section>
 
-### 📊 [Kalshi Edge](https://github.com/PedroVBAmorim)
-**Python**
+<footer>
+  <p class="footer-copy">© 2026 Pedro Villas Boas Amorim</p>
+  <div class="footer-links">
+    <a href="https://github.com/PedroVBAmorim" target="_blank">GitHub</a>
+    <a href="https://www.linkedin.com/in/pedroamorimufl" target="_blank">LinkedIn</a>
+    <a href="mailto:pedrovillasboasa@ufl.edu">Email</a>
+  </div>
+</footer>
 
-Prediction market signal engine using Z-score anomaly detection, built at a hackathon.
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => entry.target.classList.add('visible'), i * 80);
+      }
+    });
+  }, { threshold: 0.1 });
 
-</td>
-<td width="50%">
+  document.querySelectorAll('.exp-item, .project-card, .project-card-static').forEach(el => observer.observe(el));
+</script>
 
-### 🎟️ FIFA World Cup Ticket Market Analysis
-**Excel · Data Modeling**
-
-Timed entries/exits across lottery rounds and secondary-market demand signals — generated ~$16K profit (~40% ROI) on $40K managed capital.
-
-</td>
-</tr>
-</table>
-
----
-
-## 🎓 Certifications
-
-<div align="center">
-
-**Databricks** — Getting Started with SQL Analytics & BI (2026)
-<br>
-**AWS** — Introduction to Amazon API Gateway (2026)
-<br>
-**Google** — Generative AI (2025)
-
-</div>
-
+</body>
+</html>
 
 
 
