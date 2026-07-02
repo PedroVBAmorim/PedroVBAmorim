@@ -68,43 +68,44 @@
 <tr>
 <td width="50%">
 
-### 📈 [Market Insight Dashboard](https://github.com/PedroVBAmorim/market-dashboard)
-**Python · Pandas · Streamlit · Plotly**
+### 💳 [CardMatch](https://github.com/PedroVBAmorim/CardMatch)
+**Python · FastAPI · Supabase/PostgreSQL · React**
 
-Live stock analysis tool that processes OHLCV data for 5+ tickers, computing RSI, volatility, cumulative return & max drawdown — with auto-generated plain-English summaries in ~3 seconds.
+Fintech card-recommendation platform — 2,500+ users and 5,000+ pageviews within 5 days of launch via organic Reddit distribution (100K+ impressions). Full CI/CD pipeline with 240+ tests.
 
-🔗 [**Live App**](https://market-dashboard-c5ytwygv2kgyrqcxappmfkc.streamlit.app)
+🔗 [**View Repo**](https://github.com/PedroVBAmorim/CardMatch)
 
 </td>
 <td width="50%">
 
-### 💳 [CreditCardIQ](https://github.com/PedroVBAmorim/CreditCardIQ)
-**C++ · Qt6 · OOP**
+### 📊 [Kalshi Edge](https://github.com/PedroVBAmorim/kalshi-edge)
+**Python · FastAPI · Streamlit**
 
-Desktop app with a weighted scoring engine evaluating 6+ financial criteria across 30+ cards. Side-by-side comparisons, real-time filtering, and a clean Qt6 GUI.
+Prediction market signal engine ingesting live Kalshi data. Computes Z-score deviations from category-derived probability baselines, flagging over/underpriced markets. Built at the Zerve Hackathon.
 
 </td>
 </tr>
 <tr>
 <td width="50%">
 
-### 💰 [FinanceWatcher](https://github.com/PedroVBAmorim/FinanceWatcher)
-**JavaScript · Node.js · Express · SQLite · Chart.js**
+### 🎟️ [FIFA World Cup Ticket Market Analysis](https://github.com/PedroVBAmorim/fifa-ticket-market-analysis)
+**Excel · Data Modeling**
 
-Full-stack budget simulator with 50/30/20 rule checker, compound investment projections, and month-over-month charts. Reduced external API calls by ~95% via smart caching.
+Managed a portfolio of 40+ positions (~$40K capital), generating ~$16K net profit (~40% ROI) through data-driven market timing across lottery rounds and secondary-market demand signals.
 
 </td>
 <td width="50%">
 
-### 🤖 [Serverless Chatbot](https://github.com/PedroVBAmorim)
-**Amazon Lex · AWS Lambda · Python**
+### 🛰️ [StellarOps Indexer — Open Source Contribution](https://github.com/StellarOps-Labs/stellarops-indexer/pull/11)
+**TypeScript · Express · Node.js**
 
-Serverless NLP pipeline on AWS with 5+ multi-intent conversational flows, custom slot types, and context-aware structured responses — zero server management.
+Contributed a contributor-activity-summary REST endpoint, including tests and documentation, to this open-source GitHub indexing tool.
+
+🔗 [**Merged PR**](https://github.com/StellarOps-Labs/stellarops-indexer/pull/11)
 
 </td>
 </tr>
 </table>
-
 ---
 
 ## 🎓 Certifications
