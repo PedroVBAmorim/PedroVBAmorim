@@ -116,10 +116,3 @@ Serverless NLP pipeline on AWS with 5+ multi-intent conversational flows, custom
  **AWS** — Introduction to Amazon API Gateway (2026)
 <br>
  **Google** — Generative AI (2025)
-
-
-
-
-
-
-
