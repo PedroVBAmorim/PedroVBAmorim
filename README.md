@@ -68,7 +68,7 @@
 <tr>
 <td width="50%">
 
-### 💳 [CardMatch](https://github.com/PedroVBAmorim/CardChirp)
+### 💳 [CardChirp](https://github.com/PedroVBAmorim/CardChirp)
 **Python · FastAPI · Supabase/PostgreSQL · React**
 
 Fintech card-recommendation platform — 2,500+ users and 5,000+ pageviews within 5 days of launch via organic Reddit distribution (100K+ impressions). Full CI/CD pipeline with 240+ tests.
